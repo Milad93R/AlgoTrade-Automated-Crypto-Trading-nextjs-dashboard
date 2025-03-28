@@ -67,13 +67,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <div id="home" className={`relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+    <div id="home" className={`relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden ${isDark ? 'bg-gray-900' : 'bg-gray-100'}`}>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         {/* Gradient circles */}
-        <div className={`absolute top-0 left-1/4 w-96 h-96 ${isDark ? 'bg-indigo-900/30' : 'bg-indigo-200/50'} rounded-full filter blur-3xl animate-pulse-slow`}></div>
-        <div className={`absolute bottom-0 right-1/4 w-[30rem] h-[30rem] ${isDark ? 'bg-purple-900/30' : 'bg-purple-200/50'} rounded-full filter blur-3xl animate-pulse-slower`}></div>
+        <div className={`absolute top-0 left-1/4 w-96 h-96 ${isDark ? 'bg-indigo-900/30' : 'bg-indigo-200/60'} rounded-full filter blur-3xl animate-pulse-slow`}></div>
+        <div className={`absolute bottom-0 right-1/4 w-[30rem] h-[30rem] ${isDark ? 'bg-purple-900/30' : 'bg-purple-200/60'} rounded-full filter blur-3xl animate-pulse-slower`}></div>
         
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>

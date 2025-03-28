@@ -10,7 +10,7 @@ export default function HowItWorks() {
   const isDark = theme === 'dark';
 
   return (
-    <AnimatedSection id="how-it-works" className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-white'} overflow-hidden relative`}>
+    <AnimatedSection id="how-it-works" className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-200'} overflow-hidden relative`}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute -left-20 top-40 w-64 h-64 ${isDark ? 'bg-indigo-900/20' : 'bg-indigo-100/40'} rounded-full filter blur-3xl`}></div>

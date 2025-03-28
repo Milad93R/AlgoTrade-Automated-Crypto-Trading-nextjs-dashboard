@@ -35,7 +35,7 @@ export default function TradingSignupForm() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-xl shadow-xl p-8 max-w-lg mx-auto`}
+        className={`${isDark ? 'bg-gray-800' : 'bg-gray-100'} rounded-xl shadow-xl p-8 max-w-lg mx-auto`}
       >
         <div className="text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -63,7 +63,7 @@ export default function TradingSignupForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-xl shadow-xl p-8 max-w-lg mx-auto`}
+      className={`${isDark ? 'bg-gray-800' : 'bg-gray-100'} rounded-xl shadow-xl p-8 max-w-lg mx-auto`}
     >
       <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-6`}>Join rasta-trendier Strategy</h2>
       
