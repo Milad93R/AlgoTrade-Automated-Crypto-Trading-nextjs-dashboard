@@ -56,8 +56,8 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? `${isDark ? 'bg-gray-900/90' : 'bg-white/90'} py-3 shadow-md backdrop-blur-lg` 
-        : `${isDark ? 'bg-gray-900/70' : 'bg-white/70'} py-5 backdrop-blur-md`
+        ? `${isDark ? 'bg-gray-900/90' : 'bg-white/90'} py-2 sm:py-3 shadow-md backdrop-blur-lg` 
+        : `${isDark ? 'bg-gray-900/70' : 'bg-white/70'} py-3 sm:py-5 backdrop-blur-md`
     }`}>
       {/* Decorative header elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,11 +79,11 @@ export default function Header() {
             <Link href="/" className="flex items-center group">
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full opacity-70 group-hover:opacity-100 blur group-hover:blur-md transition-all duration-300"></div>
-                <span className="relative flex items-center justify-center w-9 h-9 bg-white rounded-full border border-indigo-100 text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text z-10">
+                <span className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full border border-indigo-100 text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text z-10">
                   A
                 </span>
               </div>
-              <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text animate-text-shimmer">
+              <span className="ml-2 text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text animate-text-shimmer">
                 AtVest
               </span>
               <div className="ml-2 hidden sm:flex items-center px-2 py-0.5 rounded-full bg-indigo-100">
@@ -104,7 +104,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative group ${
+                  className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative group ${
                     activeSection === item.id
                       ? `${isDark ? 'text-indigo-400' : 'text-indigo-700'}`
                       : `${isDark ? 'text-gray-300 hover:text-indigo-400' : 'text-gray-700 hover:text-indigo-600'}`
@@ -130,20 +130,21 @@ export default function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.6 }}
-              className="mr-4"
+              className="mr-3 sm:mr-4"
             >
               <ThemeToggle />
             </motion.div>
             
-            {/* Invest Now Button */}
+            {/* Sign Up Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.7 }}
+              className="hidden md:block"
             >
               <Link
                 href="#"
-                className="hidden md:flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                className="flex items-center px-4 lg:px-5 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
               >
                 <span className="mr-2">Sign Up</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,16 +158,16 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className={`md:hidden ml-4 rounded-md p-2 ${
+              className={`md:hidden ml-2 sm:ml-4 rounded-md p-1.5 sm:p-2 ${
                 isDark ? 'text-gray-300 hover:text-indigo-400 bg-gray-800 hover:bg-gray-700' : 'text-gray-700 hover:text-indigo-600 bg-gray-100 hover:bg-gray-200'
-              } transition-colors`}
+              } transition-colors flex items-center justify-center`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <div className="w-6 h-6 relative">
-                <span className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-2.5' : '-translate-y-1.5'}`}></span>
-                <span className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 translate-y-2.5' : 'translate-y-1.5'}`}></span>
+              <div className="w-5 h-5 sm:w-6 sm:h-6 relative flex items-center justify-center">
+                <span className={`absolute h-0.5 w-full bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1'}`}></span>
+                <span className={`absolute h-0.5 w-full bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`absolute h-0.5 w-full bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1'}`}></span>
               </div>
             </motion.button>
           </div>
@@ -183,7 +184,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className={`md:hidden ${isDark ? 'bg-gray-900/95' : 'bg-white/95'} backdrop-blur-lg overflow-hidden border-t ${isDark ? 'border-gray-800' : 'border-gray-200'}`}
           >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item, index) => (
                   <motion.div
@@ -194,18 +195,18 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center justify-between py-3 px-4 rounded-lg ${
+                      className={`flex items-center justify-between py-2.5 sm:py-3 px-4 rounded-lg ${
                         activeSection === item.id
                           ? isDark 
-                            ? 'text-indigo-400 bg-gray-800'
-                            : 'text-indigo-700 bg-indigo-100'
+                            ? 'text-indigo-400 bg-gray-800/80'
+                            : 'text-indigo-700 bg-indigo-100/80'
                           : isDark
-                            ? 'text-gray-300 hover:text-indigo-400 hover:bg-gray-800'
-                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-100'
+                            ? 'text-gray-300 hover:text-indigo-400 hover:bg-gray-800/80'
+                            : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-100/80'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <span>{item.name}</span>
+                      <span className="font-medium">{item.name}</span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -221,7 +222,7 @@ export default function Header() {
                 >
                   <Link
                     href="#"
-                    className="flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium shadow-md"
+                    className="flex items-center justify-center py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium shadow-md"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="mr-2">Sign Up</span>
