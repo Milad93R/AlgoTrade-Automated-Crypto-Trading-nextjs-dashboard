@@ -69,8 +69,25 @@ export default function Hero() {
   return (
     <div id="home" className={`relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden ${isDark ? 'bg-gray-900' : 'bg-gray-100'}`}>
       
+      {/* SVG Background directly embedded for maximum visibility */}
+      <div className="absolute inset-0 z-[1] opacity-50 overflow-hidden">
+        <object 
+          type="image/svg+xml"
+          data="/raising-graph.svg" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          {/* Fallback */}
+          <img 
+            src="/raising-graph.svg" 
+            alt="" 
+            className="w-full h-full object-cover" 
+          />
+        </object>
+      </div>
+      
       {/* Animated background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 z-[2] overflow-hidden">
         {/* Gradient circles */}
         <div className={`absolute top-0 left-1/4 w-96 h-96 ${isDark ? 'bg-indigo-900/30' : 'bg-indigo-200/60'} rounded-full filter blur-3xl animate-pulse-slow`}></div>
         <div className={`absolute bottom-0 right-1/4 w-[30rem] h-[30rem] ${isDark ? 'bg-purple-900/30' : 'bg-purple-200/60'} rounded-full filter blur-3xl animate-pulse-slower`}></div>
@@ -127,7 +144,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-[10]">
         <div className="max-w-4xl mx-auto text-center">
           {/* Styled badge above the title */}
           <motion.div 
