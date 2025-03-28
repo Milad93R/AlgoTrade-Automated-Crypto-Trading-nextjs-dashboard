@@ -131,35 +131,7 @@ export default function Footer() {
         </div>
         
         {/* CTA Banner */}
-        <div className={`mt-12 p-6 rounded-xl ${
-          isDark 
-            ? 'bg-indigo-900/30 border-indigo-800' 
-            : 'bg-indigo-50 border-indigo-100'
-        } border`}>
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0">
-              <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>
-                Ready to start investing?
-              </h3>
-              <p className={`${isDark ? 'text-indigo-200' : 'text-indigo-700'}`}>
-                Join thousands of successful investors using our algorithm
-              </p>
-            </div>
-            <Link 
-              href="/invest"
-              className={`inline-flex items-center px-6 py-3 rounded-full ${
-                isDark 
-                  ? 'bg-white text-indigo-600 hover:bg-gray-100' 
-                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
-              } font-medium transition-colors`}
-            >
-              <span>Start Investing</span>
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </Link>
-          </div>
-        </div>
+
         
         {/* Copyright */}
         <div className={`mt-12 pt-8 border-t ${
@@ -186,21 +158,7 @@ export default function Footer() {
         </div>
         
         {/* Risk disclosure */}
-        <div className={`mt-8 p-6 rounded-xl text-sm ${
-          isDark 
-            ? 'bg-gray-800 text-gray-400' 
-            : 'bg-gray-100 text-gray-600'
-        }`}>
-          <p className={`mb-2 font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
-            Risk Disclosure:
-          </p>
-          <p>
-            Cryptocurrency trading involves substantial risk and is not suitable for all investors. 
-            The high degree of leverage can work against you as well as for you. 
-            Before deciding to trade cryptocurrencies you should carefully consider your investment objectives, 
-            level of experience, and risk appetite. Past performance is not indicative of future results.
-          </p>
-        </div>
+
       </div>
     </footer>
   );
