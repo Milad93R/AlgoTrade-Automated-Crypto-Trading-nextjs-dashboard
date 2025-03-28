@@ -62,7 +62,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="features" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 
@@ -70,7 +70,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
             Powerful Trading Features
           </motion.h2>
@@ -79,7 +79,7 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-gray-600 dark:text-gray-300"
+            className="text-xl text-gray-600"
           >
             Everything you need to analyze, optimize, and automate your cryptocurrency trading
           </motion.p>
@@ -93,13 +93,13 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
             >
-              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -111,7 +111,7 @@ export default function Features() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <a href="#backtesting" className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium">
+          <a href="#backtesting" className="inline-flex items-center text-indigo-600 font-medium">
             Learn more about our backtesting engine
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ml-1">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />

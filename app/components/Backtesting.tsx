@@ -21,7 +21,7 @@ export default function Backtesting() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
             Powerful Backtesting Engine
           </motion.h2>
@@ -30,7 +30,7 @@ export default function Backtesting() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-gray-600 dark:text-gray-300"
+            className="text-xl text-gray-600"
           >
             Test your trading strategies against historical data to see how they would have performed
           </motion.p>
@@ -52,27 +52,27 @@ export default function Backtesting() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6"
+            className="bg-white rounded-xl shadow-xl p-6"
           >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Strategy Library</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Strategy Library</h3>
             
             <div className="space-y-4 mb-8">
               {strategies.map((strategy) => (
                 <div 
                   key={strategy.id} 
-                  className={`p-4 ${strategy.featured ? 'bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800' : 'bg-gray-50 dark:bg-gray-700'} rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors cursor-pointer`}
+                  className={`p-4 ${strategy.featured ? 'bg-indigo-50 border border-indigo-200' : 'bg-gray-50'} rounded-lg hover:bg-gray-100 transition-colors cursor-pointer`}
                 >
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">
+                      <h4 className="text-lg font-medium text-gray-900 mb-1">
                         {strategy.name}
                         {strategy.featured && (
-                          <span className="ml-2 text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 py-0.5 px-2 rounded-full">
+                          <span className="ml-2 text-xs bg-green-100 text-green-800 py-0.5 px-2 rounded-full">
                             Featured
                           </span>
                         )}
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-gray-600">
                         {strategy.featured 
                           ? 'Our highest performing strategy with impressive results'
                           : 'Click to view detailed performance metrics'}
@@ -80,7 +80,7 @@ export default function Backtesting() {
                     </div>
                     {strategy.featured && (
                       <Link href="/invest">
-                        <button className="text-xs bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white py-1 px-3 rounded-full">
+                        <button className="text-xs bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-3 rounded-full">
                           Invest Now
                         </button>
                       </Link>
@@ -90,24 +90,24 @@ export default function Backtesting() {
               ))}
             </div>
             
-            <div className="p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-200 dark:border-indigo-800">
-              <h4 className="text-lg font-medium text-indigo-700 dark:text-indigo-400 mb-2">Key Statistics</h4>
+            <div className="p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+              <h4 className="text-lg font-medium text-indigo-700 mb-2">Key Statistics</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Win Rate</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">72.4%</p>
+                  <p className="text-sm text-gray-600">Win Rate</p>
+                  <p className="text-lg font-bold text-gray-900">72.4%</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Profit Factor</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">2.81</p>
+                  <p className="text-sm text-gray-600">Profit Factor</p>
+                  <p className="text-lg font-bold text-gray-900">2.81</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Max Drawdown</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">14.3%</p>
+                  <p className="text-sm text-gray-600">Max Drawdown</p>
+                  <p className="text-lg font-bold text-gray-900">14.3%</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Sharpe Ratio</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">1.92</p>
+                  <p className="text-sm text-gray-600">Sharpe Ratio</p>
+                  <p className="text-lg font-bold text-gray-900">1.92</p>
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Backtesting() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-indigo-600 dark:bg-indigo-700 rounded-xl shadow-xl p-8 text-white"
+          className="bg-indigo-600 rounded-xl shadow-xl p-8 text-white"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-2">

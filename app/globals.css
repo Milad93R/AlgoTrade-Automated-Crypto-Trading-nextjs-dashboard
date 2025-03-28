@@ -5,18 +5,16 @@
   --foreground: #171717;
 }
 
+html.dark {
+  --background: #121212;
+  --foreground: #f3f4f6;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -95,6 +93,20 @@ body {
 @keyframes count-up {
   from { content: "0"; }
   to { content: attr(data-value); }
+}
+
+@keyframes particle-burst {
+  0% { 
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% { 
+    transform: translate(
+      calc(-50% + var(--particle-x, 50px)),
+      calc(-50% + var(--particle-y, 50px))
+    ) scale(1.5);
+    opacity: 0;
+  }
 }
 
 .animate-pulse-slow {

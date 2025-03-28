@@ -1,13 +1,13 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
-import { Providers } from "./providers";
+import { ThemeProvider } from './context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'AtVest - Automated Crypto Trading Investment',
-  description: 'Invest in our automated trading strategy and earn profits while we manage your investments',
+  description: 'Invest in our rasta-trendier trading strategy and earn profits while we manage your investments',
 };
 
 export default function RootLayout({
@@ -16,11 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300`}>
-        <Providers>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} min-h-screen transition-colors duration-300`}>
+        <ThemeProvider>
           {children}
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );

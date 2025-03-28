@@ -14,6 +14,7 @@ import {
   Cell
 } from 'recharts';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 // Mock data - Replace with actual data from your API
 const mockData = {
@@ -54,6 +55,8 @@ const calculateCumulative = (yearData: any[]) => {
 export default function MonthlyResultsChart() {
   const [selectedYear, setSelectedYear] = useState('2023');
   const [showCumulative, setShowCumulative] = useState(false);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   
   const years = Object.keys(mockData);
   const currentYearData = mockData[selectedYear as keyof typeof mockData] || [];
@@ -69,15 +72,15 @@ export default function MonthlyResultsChart() {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-          <p className="font-medium text-gray-700 dark:text-gray-300">{`${label}`}</p>
+        <div className={`${isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-3 rounded-lg shadow-lg border`}>
+          <p className={`font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{`${label}`}</p>
           {showCumulative ? (
-            <p className="text-indigo-600 dark:text-indigo-400">
+            <p className="text-indigo-500">
               <span className="font-medium">Value: </span>
               {`${payload[0].value}`}
             </p>
           ) : (
-            <p className={payload[0].value >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}>
+            <p className={payload[0].value >= 0 ? "text-green-500" : "text-red-500"}>
               <span className="font-medium">Profit: </span>
               {`${payload[0].value}%`}
             </p>
@@ -89,19 +92,23 @@ export default function MonthlyResultsChart() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-full">
+    <div className={`${isDark ? 'bg-gray-800' : 'bg-white'} rounded-xl shadow-xl p-6 w-full`}>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 md:mb-0">
+        <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-800'} mb-4 md:mb-0`}>
           Monthly Performance
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex items-center space-x-2">
-            <label className="text-gray-700 dark:text-gray-300">Display:</label>
+            <label className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Display:</label>
             <select 
               value={showCumulative ? 'cumulative' : 'monthly'}
               onChange={(e) => setShowCumulative(e.target.value === 'cumulative')}
-              className="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md p-2 text-gray-800 dark:text-white"
+              className={`${
+                isDark 
+                  ? 'bg-gray-700 border-gray-600 text-white' 
+                  : 'bg-gray-100 border-gray-300 text-gray-800'
+              } border rounded-md p-2`}
             >
               <option value="monthly">Monthly Returns</option>
               <option value="cumulative">Cumulative Value</option>
@@ -109,7 +116,7 @@ export default function MonthlyResultsChart() {
           </div>
           
           <div className="flex items-center space-x-2">
-            <label className="text-gray-700 dark:text-gray-300">Year:</label>
+            <label className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Year:</label>
             <div className="flex space-x-2">
               {years.map((year) => (
                 <motion.button
@@ -119,8 +126,10 @@ export default function MonthlyResultsChart() {
                   onClick={() => setSelectedYear(year)}
                   className={`px-4 py-2 rounded-md transition-colors ${
                     selectedYear === year
-                      ? 'bg-indigo-600 text-white dark:bg-indigo-500'
-                      : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
+                      ? 'bg-indigo-600 text-white'
+                      : isDark 
+                        ? 'bg-gray-700 text-gray-300' 
+                        : 'bg-gray-200 text-gray-700'
                   }`}
                 >
                   {year}
@@ -138,19 +147,19 @@ export default function MonthlyResultsChart() {
               data={displayData}
               margin={{ top: 10, right: 30, left: 20, bottom: 40 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#374151" strokeOpacity={0.2} />
+              <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#4B5563" : "#374151"} strokeOpacity={0.2} />
               <XAxis 
                 dataKey="month" 
                 angle={-45} 
                 textAnchor="end"
                 height={70}
                 tickMargin={20}
-                tick={{ fill: 'currentColor' }}
-                className="text-gray-600 dark:text-gray-400"
+                tick={{ fill: isDark ? '#D1D5DB' : 'currentColor' }}
+                className={isDark ? "text-gray-300" : "text-gray-600"}
               />
               <YAxis 
-                tick={{ fill: 'currentColor' }}
-                className="text-gray-600 dark:text-gray-400"
+                tick={{ fill: isDark ? '#D1D5DB' : 'currentColor' }}
+                className={isDark ? "text-gray-300" : "text-gray-600"}
               />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
@@ -168,23 +177,23 @@ export default function MonthlyResultsChart() {
               data={displayData}
               margin={{ top: 10, right: 30, left: 20, bottom: 40 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#374151" strokeOpacity={0.2} />
+              <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#4B5563" : "#374151"} strokeOpacity={0.2} />
               <XAxis 
                 dataKey="month" 
                 angle={-45} 
                 textAnchor="end"
                 height={70}
                 tickMargin={20}
-                tick={{ fill: 'currentColor' }}
-                className="text-gray-600 dark:text-gray-400"
+                tick={{ fill: isDark ? '#D1D5DB' : 'currentColor' }}
+                className={isDark ? "text-gray-300" : "text-gray-600"}
               />
               <YAxis 
-                tick={{ fill: 'currentColor' }}
-                className="text-gray-600 dark:text-gray-400"
+                tick={{ fill: isDark ? '#D1D5DB' : 'currentColor' }}
+                className={isDark ? "text-gray-300" : "text-gray-600"}
               />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
-              <ReferenceLine y={0} stroke="#9CA3AF" />
+              <ReferenceLine y={0} stroke={isDark ? "#9CA3AF" : "#9CA3AF"} />
               <Bar 
                 dataKey="profit" 
                 name="Monthly Profit %" 
