@@ -185,7 +185,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
           >
             <Link 
-              href="#" 
+              href="/signup" 
               className={`relative px-8 py-4 rounded-full ${isDark ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-indigo-600 hover:bg-indigo-700'} text-white text-center font-medium shadow-lg hover:shadow-xl shadow-indigo-500/20 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 overflow-hidden group`}
             >
               <span className="relative z-10 flex items-center justify-center">

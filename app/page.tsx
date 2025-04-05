@@ -201,7 +201,7 @@ export default function Home() {
                 </div>
                 <div>
                   <Link
-                    href="/invest"
+                    href="/signup"
                     className="inline-flex items-center px-8 py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 transition-all font-medium shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 group"
                   >
                     <span>Start Investing Now</span>

@@ -143,7 +143,7 @@ export default function Header() {
               className="hidden md:block"
             >
               <Link
-                href="#"
+                href="/signup"
                 className="flex items-center px-4 lg:px-5 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
               >
                 <span className="mr-2">Sign Up</span>
@@ -221,7 +221,7 @@ export default function Header() {
                   className="pt-2"
                 >
                   <Link
-                    href="#"
+                    href="/signup"
                     className="flex items-center justify-center py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium shadow-md"
                     onClick={() => setIsMenuOpen(false)}
                   >

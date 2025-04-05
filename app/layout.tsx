@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { ThemeProvider } from './context/ThemeContext';
+import { AuthProvider } from './context/AuthContext';
 import ChatWidget from './components/ChatWidget';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,8 +25,10 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen transition-colors duration-300`}>
         <ThemeProvider>
-          {children}
-          <ChatWidget />
+          <AuthProvider>
+            {children}
+            <ChatWidget />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
