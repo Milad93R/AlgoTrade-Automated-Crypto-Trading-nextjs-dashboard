@@ -67,7 +67,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div id="home" className={`relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden ${isDark ? 'bg-gray-900' : 'bg-gray-100'}`}>
+    <div id="home" className={`relative pt-28 pb-50 md:pt-40 md:pb-40 overflow-hidden ${isDark ? 'bg-gray-900' : 'bg-gray-100'}`}>
       
       {/* SVG Background directly embedded for maximum visibility */}
       <div className="absolute inset-0 z-[1] opacity-50 overflow-hidden">
@@ -220,7 +220,7 @@ export default function Hero() {
           {/* Stats with enhanced styling */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { value: "72.4%", label: "Annual Return", delay: 0.4, icon: "chart" },
+              { value: "200%+", label: "Annual Return", delay: 0.4, icon: "chart" },
               { value: "90%", label: "Profit Share", delay: 0.5, icon: "wallet" },
               { value: "24/7", label: "Automated Trading", delay: 0.6, icon: "clock" }
             ].map((stat, index) => (

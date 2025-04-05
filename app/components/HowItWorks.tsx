@@ -10,7 +10,7 @@ export default function HowItWorks() {
   const isDark = theme === 'dark';
 
   return (
-    <AnimatedSection id="how-it-works" className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-200'} overflow-hidden relative`}>
+    <AnimatedSection id="how-it-works" className={`py-10 ${isDark ? 'bg-gray-900' : 'bg-gray-100'} overflow-hidden relative`}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute -left-20 top-40 w-64 h-64 ${isDark ? 'bg-indigo-900/20' : 'bg-indigo-100/40'} rounded-full filter blur-3xl`}></div>
@@ -47,9 +47,9 @@ export default function HowItWorks() {
                 <div className={`w-16 h-16 ${isDark ? 'bg-indigo-900/50 text-indigo-300' : 'bg-indigo-100 text-indigo-600'} rounded-full flex items-center justify-center font-bold text-2xl mb-6 shadow-inner animate-bounce-subtle`}>
                   1
                 </div>
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>Sign Up & Join</h3>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>Sign Up & Connect</h3>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Create your account in minutes. Start with as little as $100 and scale up anytime as you see results.
+                  Create your account in minutes and securely connect your exchange API. Your funds remain in your own exchange account at all times.
                 </p>
                 <div className="mt-4 text-indigo-500 font-medium group">
                   <Link href="#" className="flex items-center transition-all duration-300 hover:pl-2">
@@ -76,7 +76,7 @@ export default function HowItWorks() {
                 </div>
                 <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>Algorithm Trades for You</h3>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Our rasta-trendier algorithm executes trades 24/7 based on sophisticated market analysis and proven risk management.
+                  Our rasta-trendier algorithm executes trades directly through your exchange account using read-only API access with sophisticated risk management.
                 </p>
                 <div className={`mt-4 flex items-center text-green-500 font-medium border border-transparent rounded-lg px-2 py-1 transition-all ${isDark ? 'hover:border-green-800 hover:bg-green-900/30' : 'hover:border-green-100 hover:bg-green-50'}`}>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 animate-pulse-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,7 +102,7 @@ export default function HowItWorks() {
                 </div>
                 <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>Watch Your Profits Grow</h3>
                 <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Track performance in real-time. Withdraw your profits or reinvest them anytime. You keep 90% of all profits.
+                  Track performance in real-time while maintaining full control of your funds. You keep 90% of all profits with no lock-up periods or transfer delays.
                 </p>
                 <div className={`mt-4 flex items-center text-green-500 font-medium border border-transparent rounded-lg px-2 py-1 transition-all ${isDark ? 'hover:border-green-800 hover:bg-green-900/30' : 'hover:border-green-100 hover:bg-green-50'}`}>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 animate-pulse-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">

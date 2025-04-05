@@ -118,7 +118,7 @@ export default function TradingSignupForm() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Historical Return</p>
-              <p className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>+72.4% <span className="text-sm font-normal">/year</span></p>
+              <p className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>+200% <span className="text-sm font-normal">/year</span></p>
             </div>
             <div>
               <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Your Fee</p>

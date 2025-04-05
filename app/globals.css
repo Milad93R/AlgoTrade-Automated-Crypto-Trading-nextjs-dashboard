@@ -168,12 +168,6 @@ body {
   background-size: 20px 20px;
 }
 
-.animate-count-up::after {
-  content: attr(data-value);
-  animation: count-up 2s forwards;
-  animation-delay: 0.3s;
-}
-
 /* Scroll-triggered animation classes */
 .section-hidden .animate-when-visible {
   opacity: 0;

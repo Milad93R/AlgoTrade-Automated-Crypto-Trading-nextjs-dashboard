@@ -53,7 +53,7 @@ export default function HeroAnimations() {
           <p className="text-xl text-gray-600 mb-10 animate-when-visible delay-300">
             Our proven rasta-trendier strategy has generated{' '}
             <span className="relative font-semibold text-indigo-600 inline-block">
-              72.4% annual returns
+              200%+ annual returns
               <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-indigo-400/50 rounded"></span>
             </span>. 
             Invest today and keep 90% of all profits while we do all the work.
@@ -97,7 +97,7 @@ export default function HeroAnimations() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
-            <div className="text-3xl font-bold text-indigo-600 animate-count-up" data-value="72.4">0</div>
+            <div className="text-3xl font-bold text-indigo-600 animate-count-up" data-value="200+">0</div>
             <div className="text-gray-600 mt-2">Annual Return</div>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all hover:scale-105 animate-when-visible delay-800">

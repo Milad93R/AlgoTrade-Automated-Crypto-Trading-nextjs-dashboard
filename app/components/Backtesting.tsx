@@ -95,15 +95,15 @@ export default function Backtesting() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-sm text-gray-600">Win Rate</p>
-                  <p className="text-lg font-bold text-gray-900">72.4%</p>
+                  <p className="text-lg font-bold text-gray-900">33%</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Profit Factor</p>
-                  <p className="text-lg font-bold text-gray-900">2.81</p>
+                  <p className="text-lg font-bold text-gray-900">1.5</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Max Drawdown</p>
-                  <p className="text-lg font-bold text-gray-900">14.3%</p>
+                  <p className="text-lg font-bold text-gray-900">53%</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Sharpe Ratio</p>
