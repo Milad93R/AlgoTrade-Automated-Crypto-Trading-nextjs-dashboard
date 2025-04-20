@@ -31,45 +31,6 @@ AlgoTrade is a sophisticated algorithmic cryptocurrency trading platform built w
 - **State Management**: React Context API
 - **Deployment**: Vercel (recommended)
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.0.0 or later
-- npm, yarn, pnpm, or bun
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/cryptovest.git
-   cd cryptovest
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
-   ```
-
-3. Run the development server
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   # or
-   bun dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application
-
 ## Project Structure
 
 ```
@@ -111,3 +72,105 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+# AtVest Monorepo
+
+This is a monorepo for the AtVest platform, containing both web and mobile applications that share code.
+
+## Project Structure
+
+```
+atvest/
+├── apps/
+│   ├── web/         # Next.js web application
+│   └── mobile/      # React Native mobile application
+└── packages/
+    ├── ui/          # Shared UI components
+    ├── api/         # API integrations
+    └── config/      # Shared configs
+```
+
+## Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+### Running the Web Application
+
+```bash
+# From the root directory
+npm run dev
+
+# Or specifically for the web app
+cd apps/web && npm run dev
+```
+
+This will start the Next.js development server for the web application.
+
+### Running the Mobile Application
+
+To run the mobile application, you need to have Expo CLI installed:
+
+```bash
+# Install Expo CLI globally if you don't have it
+npm install -g expo-cli
+
+# Start the mobile app
+cd apps/mobile
+npm run dev
+```
+
+This will start the Expo development server. You can run the app on:
+- iOS simulator (requires macOS and Xcode)
+- Android emulator (requires Android Studio)
+- Physical device using the Expo Go app (scan the QR code)
+
+## Shared Packages
+
+### UI Components
+
+Shared UI components are located in the `packages/ui` directory. These components can be used in both web and mobile applications.
+
+### API Integration
+
+Shared API client is located in the `packages/api` directory. It provides a unified way to interact with the backend services.
+
+### Configuration
+
+Shared configuration is located in the `packages/config` directory. It contains common configuration like Tailwind and ESLint configurations.
+
+## Development Workflow
+
+1. Make changes to shared packages if needed
+2. Run tests to ensure everything works correctly
+3. Run the appropriate application (web or mobile) to test your changes
+4. Commit your changes
+
+## Building for Production
+
+### Web Application
+
+```bash
+npm run build
+```
+
+### Mobile Application
+
+For mobile, you'll need to use Expo's build service or EAS Build:
+
+```bash
+cd apps/mobile
+npx expo build:android  # For Android
+npx expo build:ios      # For iOS (requires Apple Developer account)
+```
+
+Or with EAS Build (recommended):
+
+```bash
+cd apps/mobile
+npx eas build --platform android
+npx eas build --platform ios
+```
